@@ -1,0 +1,44 @@
+class DataStructureStore:
+    def __init__(self):
+        self.stack = []
+        self.queue = []
+        self.dict_store = {}
+
+    # Stack Operations
+    def push_stack(self, item):
+        self.stack.append(item)
+
+    def pop_stack(self):
+        return self.stack.pop() if self.stack else None
+
+    # Queue Operations
+    def enqueue(self, item):
+        self.queue.append(item)
+
+    def dequeue(self):
+        return self.queue.pop(0) if self.queue else None
+
+    # Dictionary Operations
+    def add_to_dict(self, key, value):
+        self.dict_store[key] = value
+
+    def get_from_dict(self, key):
+        return self.dict_store.get(key, None)
+
+# Example usage
+if __name__ == "__main__":
+    store = DataStructureStore()
+
+    # Stack operations
+    store.push_stack(10)
+    store.push_stack(20)
+    print("Stack Pop:", store.pop_stack())
+
+    # Queue operations
+    store.enqueue(30)
+    store.enqueue(40)
+    print("Queue Dequeue:", store.dequeue())
+
+    # Dictionary operations
+    store.add_to_dict("name", "Alice")
+    print("Dictionary Value for 'name':", store.get_from_dict("name"))
